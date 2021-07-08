@@ -9,3 +9,4 @@ Includes:
 * jBPM Workbench
 * KIE Server
 * Keycloak OIDC Wildfly Adapter
+  * See [jBPM documentation for keycloak integration](https://docs.jbpm.org/latestFinal/jbpm-docs/html_single/#_kie.keycloakssointegration)
