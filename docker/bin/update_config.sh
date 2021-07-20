@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
+KEYSTORE=${JBOSS_HOME}/standalone/configuration/jBPMKeystore.jceks
+KEYSTORE_PW_OLD=jBPMKeyStorePassword
+echo "${KEYSTORE_PW_OLD}" | keytool -delete -alias jBPMAlias -storetype JCEKS -keystore "${KEYSTORE}" -v
+echo "${KEYSTORE_PW_OLD}" | keytool -storepasswd -new "${KEYSTORE_PW}" -storetype JCEKS -keystore "${KEYSTORE}" -v
+
 CONFIG_FILE="${JBOSS_HOME}"/standalone/configuration/standalone.xml
 
+sed -i "s;KEYSTORE_PW;${KEYSTORE_PW};g" "${CONFIG_FILE}"
 sed -i "s;KIE_SERVER_ID;${KIE_SERVER_ID};g" "${CONFIG_FILE}"
 sed -i "s;KIE_SERVER_LOCATION;${KIE_SERVER_LOCATION};g" "${CONFIG_FILE}"
 sed -i "s;KIE_SERVER_USER;${KIE_SERVER_USER};g" "${CONFIG_FILE}"

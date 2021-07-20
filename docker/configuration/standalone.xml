@@ -47,7 +47,7 @@
         <property name="appformer.experimental.features" value="true"/>
         <property name="org.kie.prometheus.server.ext.disabled" value="false"/>
         <property name="kie.keystore.keyStoreURL" value="file:///${jboss.server.config.dir}/jBPMKeystore.jceks"/>
-        <property name="kie.keystore.keyStorePwd" value="jBPMKeyStorePassword"/>
+        <property name="kie.keystore.keyStorePwd" value="KEYSTORE_PW"/>
         <property name="kie.keystore.key.server.alias" value="jBPMAlias"/>
         <property name="kie.keystore.key.server.pwd" value="jBPMKeyPassword"/>
         <property name="kie.keystore.key.ctrl.alias" value="jBPMAlias"/>
@@ -79,13 +79,6 @@
                         <keystore path="application.keystore" relative-to="jboss.server.config.dir" keystore-password="password" alias="server" key-password="password" generate-self-signed-certificate-host="localhost"/>
                     </ssl>
                 </server-identities>
-                <authentication>
-                    <local default-user="$local" allowed-users="*" skip-group-loading="true"/>
-                    <properties path="users.properties" relative-to="jboss.server.config.dir"/>
-                </authentication>
-                <authorization>
-                    <properties path="roles.properties" relative-to="jboss.server.config.dir"/>
-                </authorization>
             </security-realm>
         </security-realms>
         <audit-log>
