@@ -22,6 +22,10 @@ USER jboss
 RUN jar ufv ${JBOSS_HOME}/standalone/deployments/business-central.war -C ${JBOSS_HOME}/standalone/deployments WEB-INF && \
     rm -rf ${JBOSS_HOME}/standalone/deployments/WEB-INF
 
+# remove superfluous files
+RUN rm ${JBOSS_HOME}/standalone/configuration/users.properties && \
+    rm ${JBOSS_HOME}/standalone/configuration/roles.properties
+
 # update scripts and configuration
 ADD bin/jbpm-postgres-config.cli ${JBOSS_HOME}/bin/jbpm-postgres-config.cli
 ADD bin/update_config.sh ${JBOSS_HOME}/bin/update_config.sh
