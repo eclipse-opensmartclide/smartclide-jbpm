@@ -1,4 +1,6 @@
-# smartclide-jbpm
+# Archived - this repository has been replaced by [eclipse-researchlabs/kie-wb-common](https://github.com/eclipse-researchlabs/kie-wb-common)
+
+## smartclide-jbpm
 
 SmartCLIDE custom jbpm docker image based on
 [jBPM Workbench Showcase Docker image](https://github.com/jboss-dockerfiles/business-central/tree/master/server).
